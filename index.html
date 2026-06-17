@@ -10,8 +10,8 @@
   <header class="hero">
     <div>
       <p class="eyebrow">Easy chat</p>
-      <h1>Create every everyday chart from a simple data sheet.</h1>
-      <p class="lede">Type labels and values into the sheet, choose a chart type, and instantly preview bar, line, area, pie, doughnut, radar, scatter, or bubble charts.</p>
+      <h1>Build any chart from an expandable spreadsheet.</h1>
+      <p class="lede">Start with a richer sales example, then add as many rows and series columns as you need for bar, line, area, pie, doughnut, radar, scatter, or bubble charts.</p>
     </div>
     <button id="sampleData" class="secondary">Load sample data</button>
   </header>
@@ -21,22 +21,17 @@
       <div class="panel-heading">
         <div>
           <h2 id="sheetTitle">Data sheet</h2>
-          <p>Add rows for labels and up to three numeric series.</p>
+          <p>Add unlimited label rows and numeric series columns.</p>
         </div>
-        <button id="addRow" class="primary">+ Add row</button>
+        <div class="sheet-actions">
+          <button id="addColumn" class="secondary">+ Add column</button>
+          <button id="addRow" class="primary">+ Add row</button>
+        </div>
       </div>
 
       <div class="table-wrap">
         <table id="dataTable">
-          <thead>
-            <tr>
-              <th>Label</th>
-              <th>Series A</th>
-              <th>Series B</th>
-              <th>Series C</th>
-              <th></th>
-            </tr>
-          </thead>
+          <thead id="sheetHead"></thead>
           <tbody id="sheetBody"></tbody>
         </table>
       </div>
