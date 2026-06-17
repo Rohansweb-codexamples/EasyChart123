@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Easy chat Chart Creator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Easy chat</p>
+      <h1>Build any chart from an expandable spreadsheet.</h1>
+      <p class="lede">Start with a richer sales example, then add as many rows and series columns as you need for bar, line, area, pie, doughnut, radar, scatter, or bubble charts.</p>
+    </div>
+    <button id="sampleData" class="secondary">Load sample data</button>
+  </header>
+
+  <main class="app-shell">
+    <section class="panel sheet-panel" aria-labelledby="sheetTitle">
+      <div class="panel-heading">
+        <div>
+          <h2 id="sheetTitle">Data sheet</h2>
+          <p>Add unlimited label rows and numeric series columns.</p>
+        </div>
+        <div class="sheet-actions">
+          <button id="addColumn" class="secondary">+ Add column</button>
+          <button id="addRow" class="primary">+ Add row</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table id="dataTable">
+          <thead id="sheetHead"></thead>
+          <tbody id="sheetBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="panel controls" aria-labelledby="controlsTitle">
+      <h2 id="controlsTitle">Chart controls</h2>
+      <label>
+        Chart title
+        <input id="chartTitle" type="text" value="Monthly Growth" />
+      </label>
+      <label>
+        Chart type
+        <select id="chartType">
+          <option value="bar">Bar</option>
+          <option value="line">Line</option>
+          <option value="area">Area</option>
+          <option value="pie">Pie</option>
+          <option value="doughnut">Doughnut</option>
+          <option value="radar">Radar</option>
+          <option value="scatter">Scatter</option>
+          <option value="bubble">Bubble</option>
+        </select>
+      </label>
+      <label>
+        Theme
+        <select id="theme">
+          <option value="bright">Bright</option>
+          <option value="ocean">Ocean</option>
+          <option value="sunset">Sunset</option>
+        </select>
+      </label>
+      <button id="downloadChart" class="primary">Download PNG</button>
+    </aside>
+
+    <section class="panel chart-panel" aria-labelledby="previewTitle">
+      <div class="panel-heading">
+        <div>
+          <h2 id="previewTitle">Live preview</h2>
+          <p id="chartHint">Bar chart compares values across labels.</p>
+        </div>
+      </div>
+      <canvas id="chartCanvas" width="960" height="560" role="img" aria-label="Chart preview"></canvas>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
